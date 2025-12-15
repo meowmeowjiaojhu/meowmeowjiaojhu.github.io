@@ -61,8 +61,18 @@
 
 .hero {
   width: 100%;
-  max-width: 600px;
-  margin: 24px auto 36px;
+  max-width: 480px;   /* 手機 & 平板用 */
+  height: auto;
+  display: block;
+  margin: 16px auto 32px;
+  border-radius: 12px;
+}
+
+/* 桌機時再縮一點 */
+@media (min-width: 900px) {
+  .hero {
+    max-width: 420px;
+  }
 }
 
     .back {
