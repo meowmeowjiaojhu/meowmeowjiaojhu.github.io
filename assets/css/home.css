@@ -1,70 +1,99 @@
 /* ===== 首頁專用：只管首頁排版，不碰文章系統 ===== */
+/* 目標：
+   ① 語意更清楚（只靠 class 分工，避免和文章混）
+   ② 首頁/文章心理邊界更強（入口像玄關，文章像書房）
+*/
 
+/* 覆蓋 site.css 的 body padding（首頁不要像文章頁一樣有固定外距） */
 body{
   padding: 0;
 }
 
+/* ===== 舞台：讓入口卡片站在畫面中間 ===== */
 .home{
-  max-width: 760px;
-  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   padding: 84px 20px 70px;
   text-align: center;
 }
 
+/* ===== 入口卡片：比文章更「門口」、更清楚的邊界 ===== */
 .home-card{
+  width: 100%;
+  max-width: 760px;
   margin: 0 auto;
-  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)), var(--paper);
-  border: 1px solid var(--line2);
+
+  /* 入口卡片層次：比文章容器再明確一點 */
+  background:
+    radial-gradient(700px 320px at 20% 0%, rgba(201,182,255,.10), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
+    var(--paper);
+
+  border: 1px solid rgba(255,255,255,.10);
   border-radius: 22px;
   padding: 54px 28px 44px;
+
   box-shadow:
-    0 24px 70px rgba(0,0,0,.36),
+    0 26px 80px rgba(0,0,0,.42),
     0 1px 0 rgba(255,255,255,.06) inset;
 }
 
+/* ===== Logo（安靜陪伴，不像硬廣） ===== */
 .home-logo{
   width: 120px;
   height: auto;
   border-radius: 22%;
   margin: 0 auto 26px;
-  opacity: .96;
+  opacity: .95;
   display: block;
-  box-shadow: 0 0 18px rgba(201,182,255,.22);
+
+  box-shadow:
+    0 0 18px rgba(201,182,255,.22),
+    0 14px 40px rgba(0,0,0,.28);
 }
 
+/* ===== 主標 ===== */
 .home-title{
   margin: 0 0 30px;
   font-weight: 650;
   font-size: 1.35em;
-  line-height: 1.5;
+  line-height: 1.55;
   letter-spacing: .02em;
 }
 
-.nav{
+/* ===== 導覽：入口選單更像「門牌」而不是文章連結 ===== */
+.home .nav{
   margin: 0 auto 26px;
   display: grid;
   gap: 12px;
   max-width: 420px;
 }
 
-.nav a{
+.home .nav a{
   display: block;
   padding: 14px 16px;
   border-radius: 14px;
+
   background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.09);
+
   text-decoration: none;
   font-size: 1.05em;
-  transition: transform .12s ease, background .12s ease;
+
+  /* 入口一致性：觸感微提升，但不動畫化 */
+  box-shadow: 0 8px 22px rgba(0,0,0,.18);
 }
 
-.nav a:hover{
+.home .nav a:hover{
   background: rgba(255,255,255,.06);
-  transform: translateY(-1px);
   text-decoration: none;
 }
 
-.note{
+/* ===== 說明文字 ===== */
+.home .note{
   color: var(--muted);
   font-size: .95em;
   line-height: 1.7;
@@ -72,15 +101,32 @@ body{
   max-width: 46ch;
 }
 
-footer{
+/* ===== Footer ===== */
+.home footer{
   margin-top: 28px;
   color: rgba(255,255,255,.45);
   font-size: .85em;
 }
 
-/* 桌機：留白更漂亮 */
+/* 超小手機：卡片 padding 稍微縮，避免擠 */
+@media (max-width: 360px){
+  .home{
+    padding: 70px 16px 56px;
+  }
+  .home-card{
+    padding: 46px 20px 40px;
+  }
+}
+
+/* 桌機：留白更漂亮（仍維持置中，不回到文章閱讀流） */
 @media (min-width: 900px){
-  .home{ padding-top: 96px; }
-  .home-card{ padding: 62px 44px 52px; }
-  .home-title{ font-size: 1.45em; }
+  .home{
+    padding-top: 96px;
+  }
+  .home-card{
+    padding: 62px 44px 52px;
+  }
+  .home-title{
+    font-size: 1.45em;
+  }
 }
