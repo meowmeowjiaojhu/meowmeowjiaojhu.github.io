@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <title>孩子也最了解媽媽</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Noto Sans TC", sans-serif;
+      background: #0f0b1a;
+      color: #f2f2f2;
+      line-height: 1.9;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-weight: normal;
+      margin: 0 0 12px;
+    }
+
+    h2 {
+      font-weight: normal;
+      margin: 48px 0 16px;
+      font-size: 1.25em;
+    }
+
+    .date {
+      font-size: 0.85em;
+      color: #aaa;
+      margin-bottom: 24px;
+    }
+
+    p {
+      margin: 0 0 1.5em;
+    }
+
+    ul {
+      margin: 0 0 1.5em 1.2em;
+      padding: 0;
+    }
+
+    li {
+      margin: 0.4em 0;
+    }
+
+    a {
+      color: #c9b6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>孩子也最了解媽媽</h1>
+    <div class="date">2025.12.16</div>
+
+    <p>
+      太多資訊沖刷，<br>
+      想寫好多文章，<br>
+      餵藥、metoo、youtoo 連環爆，<br>
+      心疼😿，真的很心疼。
+    </p>
+
+    <h2>孩子與父母，其實站在不同的起點</h2>
+
+    <p>
+      媽媽是在人生這條路上比孩子多走了幾年，<br>
+      正好走到親職這條路。
+    </p>
+
+    <p>
+      孩子是睜開眼睛就面對了親子關係，<br>
+      原生家庭，就是他人生的第一個功課。
+    </p>
+
+    <p>
+      常有媽媽說：<br>
+      「小孩身上有幾根毛我都知道。」
+    </p>
+
+    <p>
+      但孩子可是從呱呱墜地開始，<br>
+      就 24 小時沉浸式體驗這個家庭。
+    </p>
+
+    <h2>孩子是如何學會「面對人生」的</h2>
+
+    <p>
+      我做了 a，爸爸會有 A 反應；<br>
+      我說了 b，媽媽會有 B 反應。
+    </p>
+
+    <p>
+      這樣的因果回饋，<br>
+      日復一日，<br>
+      成為孩子理解世界的方式。
+    </p>
+
+    <p>
+      各位家長們，<br>
+      真的覺得「孩子不瞭解我」嗎？
+    </p>
+
+    <h2>孩子其實非常了解</h2>
+
+    <p>
+      孩子會總結他的人生經驗，<br>
+      然後決定接下來的行動：
+    </p>
+
+    <p>
+      「我不能告訴媽媽這個，我會被罵死。」<br>
+      「我不能讓爸爸知道這個，他會揍扁我。」<br>
+      「我才不跟他們說這些，說了也沒用，只是找罵。」
+    </p>
+
+    <p>如何，熟悉嗎？</p>
+
+    <p>
+      你小時候有這種感覺嗎？<br>
+      你覺得讓下一代複製這個感覺，很正常嗎？
+    </p>
+
+    <h2>為什麼需要第三者</h2>
+
+    <p>
+      當老師二十年，<br>
+      我常常會告訴學生：
+    </p>
+
+    <p>
+      「我知道你覺得跟爸爸媽媽反應這些沒用，<br>
+      那你就跟我說，<br>
+      我幫你跟爸爸媽媽說。」
+    </p>
+
+    <p>
+      家長為什麼需要通過第三者，<br>
+      才能知道自己孩子的真實想法呢？
+    </p>
+
+    <p>
+      如果沒有第三者，<br>
+      能夠幫孩子傳達他的想法呢？
+    </p>
+
+    <h2>請為孩子織一張安全網</h2>
+
+    <p>
+      如果家長真的不善溝通與表達，<br>
+      請幫孩子織一張網。
+    </p>
+
+    <p>
+      一張能夠接住他們的安全網。
+    </p>
+
+    <div class="back">
+      <a href="../index.html">← 回到喵喵儲思盆</a>
+    </div>
+  </div>
+</body>
+</html>
