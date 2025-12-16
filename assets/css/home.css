@@ -9,8 +9,8 @@ body{
   padding: 0;
 }
 
-/* ===== 舞台：讓入口卡片站在畫面中間 ===== */
-.home{
+/* ===== 舞台（唯一入口）：用 main.home 壓過 site.css 對 main 的規則 ===== */
+main.home{
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -20,13 +20,13 @@ body{
   text-align: center;
 }
 
-/* ===== 入口卡片：比文章更「門口」、更清楚的邊界 ===== */
-.home-card{
+/* ===== 入口卡片 ===== */
+main.home > .home-card{
   width: 100%;
   max-width: 760px;
   margin: 0 auto;
+  text-align: center;
 
-  /* 入口卡片層次：比文章容器再明確一點 */
   background:
     radial-gradient(700px 320px at 20% 0%, rgba(201,182,255,.10), transparent 60%),
     linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
@@ -41,7 +41,7 @@ body{
     0 1px 0 rgba(255,255,255,.06) inset;
 }
 
-/* ===== Logo（安靜陪伴，不像硬廣） ===== */
+/* ===== Logo ===== */
 .home-logo{
   width: 120px;
   height: auto;
@@ -64,7 +64,7 @@ body{
   letter-spacing: .02em;
 }
 
-/* ===== 導覽：入口選單更像「門牌」而不是文章連結 ===== */
+/* ===== 導覽 ===== */
 .home .nav{
   margin: 0 auto 26px;
   display: grid;
@@ -83,7 +83,6 @@ body{
   text-decoration: none;
   font-size: 1.05em;
 
-  /* 入口一致性：觸感微提升，但不動畫化 */
   box-shadow: 0 8px 22px rgba(0,0,0,.18);
 }
 
@@ -110,20 +109,20 @@ body{
 
 /* 超小手機：卡片 padding 稍微縮，避免擠 */
 @media (max-width: 360px){
-  .home{
+  main.home{
     padding: 70px 16px 56px;
   }
-  .home-card{
+  main.home > .home-card{
     padding: 46px 20px 40px;
   }
 }
 
-/* 桌機：留白更漂亮（仍維持置中，不回到文章閱讀流） */
+/* 桌機：留白更漂亮 */
 @media (min-width: 900px){
-  .home{
+  main.home{
     padding-top: 96px;
   }
-  .home-card{
+  main.home > .home-card{
     padding: 62px 44px 52px;
   }
   .home-title{
