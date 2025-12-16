@@ -1,0 +1,86 @@
+/* ===== 首頁專用：只管首頁排版，不碰文章系統 ===== */
+
+body{
+  padding: 0;
+}
+
+.home{
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 84px 20px 70px;
+  text-align: center;
+}
+
+.home-card{
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)), var(--paper);
+  border: 1px solid var(--line2);
+  border-radius: 22px;
+  padding: 54px 28px 44px;
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.36),
+    0 1px 0 rgba(255,255,255,.06) inset;
+}
+
+.home-logo{
+  width: 120px;
+  height: auto;
+  border-radius: 22%;
+  margin: 0 auto 26px;
+  opacity: .96;
+  display: block;
+  box-shadow: 0 0 18px rgba(201,182,255,.22);
+}
+
+.home-title{
+  margin: 0 0 30px;
+  font-weight: 650;
+  font-size: 1.35em;
+  line-height: 1.5;
+  letter-spacing: .02em;
+}
+
+.nav{
+  margin: 0 auto 26px;
+  display: grid;
+  gap: 12px;
+  max-width: 420px;
+}
+
+.nav a{
+  display: block;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  text-decoration: none;
+  font-size: 1.05em;
+  transition: transform .12s ease, background .12s ease;
+}
+
+.nav a:hover{
+  background: rgba(255,255,255,.06);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.note{
+  color: var(--muted);
+  font-size: .95em;
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 46ch;
+}
+
+footer{
+  margin-top: 28px;
+  color: rgba(255,255,255,.45);
+  font-size: .85em;
+}
+
+/* 桌機：留白更漂亮 */
+@media (min-width: 900px){
+  .home{ padding-top: 96px; }
+  .home-card{ padding: 62px 44px 52px; }
+  .home-title{ font-size: 1.45em; }
+}
