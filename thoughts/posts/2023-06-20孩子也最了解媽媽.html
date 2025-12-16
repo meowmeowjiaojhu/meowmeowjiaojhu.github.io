@@ -37,6 +37,23 @@
       margin-bottom: 24px;
     }
 
+    /* ✅ 首圖：手機/桌機自動縮放 */
+    .hero {
+      width: 100%;
+      max-width: 480px;   /* 手機 & 平板 */
+      height: auto;
+      display: block;
+      margin: 16px auto 32px;
+      border-radius: 12px;
+    }
+
+    /* 桌機時再縮一點 */
+    @media (min-width: 900px) {
+      .hero {
+        max-width: 420px;
+      }
+    }
+
     p {
       margin: 0 0 1.5em;
     }
@@ -72,6 +89,12 @@
   <div class="container">
     <h1>孩子也最了解媽媽</h1>
     <div class="date">2025.12.16</div>
+
+    <img
+      class="hero"
+      src="../assets/images/thoughts/2025-12-16/cover.jpg"
+      alt="孩子也最了解媽媽｜親子視角與安全感"
+    >
 
     <p>
       太多資訊沖刷，<br>
