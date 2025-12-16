@@ -1,1 +1,111 @@
+:root{
+  --bg: #120a2a;
+  --paper: #1a1036;
+  --text: #f2f2f2;
+  --muted: #b7b0c8;
+  --line: rgba(255,255,255,.10);
+  --link: #c9b6ff;
+  --linkHover: #e2d8ff;
+}
+
+/* ===== 全站基礎 ===== */
+body {
+  font-family: system-ui, -apple-system, "Noto Sans TC", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.9;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--linkHover);
+  text-decoration: underline;
+}
+
+/* ===== 文章容器 ===== */
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--paper);
+  padding: 32px 24px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+/* ===== 小 Logo ===== */
+.logo {
+  display: block;
+  width: 48px;
+  margin: 0 auto 12px;
+  opacity: 0.92;
+}
+
+/* ===== 標題與日期 ===== */
+h1 {
+  font-weight: 600;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.date {
+  font-size: 0.9em;
+  color: var(--muted);
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+/* 桌機回到閱讀流 */
+@media (min-width: 900px) {
+  .logo { margin: 0 0 12px; }
+  h1, .date { text-align: left; }
+}
+
+/* ===== 內文 ===== */
+h2 {
+  font-weight: 600;
+  margin: 46px 0 14px;
+  font-size: 1.22em;
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+
+ul {
+  margin: 0 0 1.5em 1.2em;
+  padding: 0;
+}
+
+li {
+  margin: 0.4em 0;
+}
+
+/* ===== 首圖 ===== */
+.hero {
+  width: 100%;
+  max-width: 480px;
+  display: block;
+  margin: 16px auto 32px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+@media (min-width: 900px) {
+  .hero { max-width: 420px; }
+}
+
+/* ===== 回列表 ===== */
+.back {
+  margin-top: 56px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  font-size: 0.98em;
+  color: var(--muted);
+}
 
