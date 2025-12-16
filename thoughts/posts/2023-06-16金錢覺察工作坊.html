@@ -10,15 +10,25 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/meowlogo32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/meowlogo180.png">
 
-  <!-- ✅ OG（先用共用圖；之後也可改成每篇自己的） -->
+  <!-- ✅ OG（先用共用圖） -->
   <meta property="og:title" content="金錢覺察工作坊">
   <meta property="og:image" content="/assets/og/meowOG.png">
 
   <style>
+    :root{
+      --bg: #120a2a;              /* 全站深紫背景（舞台） */
+      --paper: #1a1036;           /* 文章底色（紙） */
+      --text: #f2f2f2;            /* 主文字 */
+      --muted: #b7b0c8;           /* 次文字（日期、提示） */
+      --line: rgba(255,255,255,.10);
+      --link: #c9b6ff;
+      --linkHover: #e2d8ff;
+    }
+
     body {
       font-family: system-ui, -apple-system, "Noto Sans TC", sans-serif;
-      background: #0f0b1a;
-      color: #f2f2f2;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.9;
       margin: 0;
       padding: 40px 20px;
@@ -27,57 +37,63 @@
     .container {
       max-width: 680px;
       margin: 0 auto;
+      background: var(--paper);
+      padding: 32px 24px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
     }
 
-    /* ✅ 閱讀型小 Logo（放在標題上方，安靜陪伴） */
+    /* ✅ 閱讀型小 Logo：手機置中，桌機靠左 */
     .logo {
       display: block;
       width: 48px;
       height: auto;
-      margin: 0 auto 12px;
+      margin: 0 auto 12px; /* 手機：置中 */
       opacity: 0.92;
     }
 
     h1 {
-      font-weight: normal;
-      margin: 0 0 12px;
-      text-align: center; /* 可選：若你不想置中，刪掉這行 */
-    }
-
-    h2 {
-      font-weight: normal;
-      margin: 48px 0 16px;
-      font-size: 1.25em;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin: 0 0 10px;
+      text-align: center; /* 手機：置中 */
     }
 
     .date {
-      font-size: 0.85em;
-      color: #aaa;
-      margin-bottom: 24px;
-      text-align: center; /* 可選：若你不想置中，刪掉這行 */
+      font-size: 0.9em;
+      color: var(--muted);
+      margin-bottom: 22px;
+      text-align: center; /* 手機：置中 */
     }
 
-    p {
-      margin: 0 0 1.5em;
+    /* ✅ 桌機閱讀模式：回到文章流（靠左） */
+    @media (min-width: 900px) {
+      .logo { margin: 0 0 12px; }
+      h1, .date { text-align: left; }
     }
+
+    h2 {
+      font-weight: 600;
+      margin: 46px 0 14px;
+      font-size: 1.22em;
+      letter-spacing: 0.01em;
+    }
+
+    p { margin: 0 0 1.5em; }
 
     ul {
       margin: 0 0 1.5em 1.2em;
       padding: 0;
     }
 
-    li {
-      margin: 0.4em 0;
-    }
+    li { margin: 0.4em 0; }
 
     a {
-      color: #c9b6ff;
+      color: var(--link);
       text-decoration: none;
     }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { color: var(--linkHover); text-decoration: underline; }
 
     .hero {
       width: 100%;
@@ -85,27 +101,25 @@
       height: auto;
       display: block;
       margin: 16px auto 32px;
-      border-radius: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.08);
     }
-
     @media (min-width: 900px) {
-      .hero {
-        max-width: 420px; /* 桌機 */
-      }
+      .hero { max-width: 420px; } /* 桌機 */
     }
 
     .back {
       margin-top: 56px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.95em;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      font-size: 0.98em;
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <!-- ✅ 小 Logo：以後每篇都固定放這裡 -->
     <img class="logo" src="/assets/logo/meowlogo512.png" alt="喵喵教主">
 
     <h1>金錢覺察工作坊</h1>
