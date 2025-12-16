@@ -21,6 +21,7 @@
 
 *{ box-sizing: border-box; }
 
+/* ✅ 全站地基：只管背景/字體/顏色，不再用 body 控留白 */
 body{
   font-family: system-ui, -apple-system, "Noto Sans TC", sans-serif;
   background:
@@ -31,6 +32,11 @@ body{
   line-height: 1.9;
   letter-spacing: 0.01em;
   margin: 0;
+  padding: 0; /* ✅ 1) 原本 40px 20px → 改成 0 */
+}
+
+/* ✅ 2) 頁面外框：文章頁/清單頁用它來提供留白（首頁不必用） */
+.page{
   padding: 40px 20px;
 }
 
@@ -241,7 +247,7 @@ pre code{
 
 /* 超大桌機：留白更漂亮 */
 @media (min-width: 1200px){
-  body{ padding: 56px 20px; }
+  .page{ padding: 56px 20px; } /* ✅ 以前在 body，現在移到 .page */
   .container{ padding: 44px 38px; }
   :root{ --measure: 66ch; }
 }
