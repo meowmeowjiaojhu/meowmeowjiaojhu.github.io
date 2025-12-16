@@ -2,102 +2,61 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
-  <title>喵喵的文字棲息地</title>
+  <title>喵喵教主的文字棲息地</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Favicon -->
-  <link rel="icon" href="meowlogo512.png" type="image/png">
+  <meta name="description" content="這裡收錄一些，關於理解自己與世界的文字。">
 
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
-      background: radial-gradient(circle at top, #2a1f3f 0%, #120b1f 60%, #0b0814 100%);
-      color: #f2f2f2;
-      line-height: 1.8;
-      margin: 0;
-      padding: 0;
-    }
+  <!-- ✅ 全站核心樣式 -->
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <!-- ✅ 首頁專用樣式 -->
+  <link rel="stylesheet" href="/assets/css/home.css">
 
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 80px 20px;
-      text-align: center;
-    }
+  <!-- ✅ Favicon（統一） -->
+  <link rel="icon" href="/assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/meowlogo32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/meowlogo180.png">
 
-.logo {
-  width: 120px;
-  margin-bottom: 36px;
-  opacity: 0.95;
-  border-radius: 22%;
-  box-shadow: 0 0 16px rgba(160, 140, 255, 0.22);
-}
-
-    h1 {
-      font-size: 1.6em;
-      font-weight: normal;
-      margin-bottom: 48px;
-    }
-
-    .section {
-      margin-bottom: 48px;
-    }
-
-    a {
-      color: #c9b6ff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .entry a {
-      display: block;
-      margin-bottom: 14px;
-      font-size: 1.15em;
-    }
-
-    .note {
-      font-size: 0.9em;
-      color: #b8b2c9;
-    }
-
-    footer {
-      margin-top: 100px;
-      font-size: 0.8em;
-      color: #777;
-    }
-  </style>
+  <!-- ✅ OG（首頁） -->
+  <meta property="og:title" content="喵喵教主的文字棲息地">
+  <meta property="og:description" content="這裡收錄一些，關於理解自己與世界的文字。">
+  <meta property="og:image" content="/assets/og/meowOG.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://meowmeowjiaojhu.github.io/">
+  <meta property="og:locale" content="zh_TW">
 </head>
 
 <body>
-  <div class="container">
+  <main class="home">
+    <section class="home-card">
 
-    <!-- Logo -->
-    <img src="meowlogo512.png" alt="喵喵教主 Logo" class="logo">
+      <img
+        src="/assets/logo/meowlogo512.png"
+        alt="喵喵教主 Logo"
+        class="home-logo"
+      >
 
-    <h1>
-      這裡收錄一些，<br>
-      關於理解自己與世界的文字。
-    </h1>
+      <h1 class="home-title">
+        這裡收錄一些，<br>
+        關於理解自己與世界的文字。
+      </h1>
 
-    <div class="section entry">
-     <a href="thoughts/">喵喵儲思盆</a>
-     <a href="library/">喵喵小書房</a>
-     <a href="learning/">學習筆記</a>
+      <nav class="nav" aria-label="網站入口">
+        <a href="/thoughts/">喵喵儲思盆</a>
+        <a href="/library/">喵喵小書房</a>
+        <a href="/learning/">學習筆記</a>
+      </nav>
 
-    </div>
+      <p class="note">
+        這裡不是即時互動的空間。<br>
+        文字會在準備好的時候，慢慢被放上來。
+      </p>
 
-    <div class="section note">
-      這裡不是即時互動的空間。<br>
-      文字會在準備好的時候，慢慢被放上來。
-    </div>
+      <footer>
+        © 喵喵教主
+      </footer>
 
-    <footer>
-      © 喵喵
-    </footer>
-
-  </div>
+    </section>
+  </main>
 </body>
 </html>
