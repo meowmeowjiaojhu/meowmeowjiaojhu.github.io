@@ -5,26 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>完成就放炮！</title>
   <meta name="description" content="輸入你的成就，按下送出，給自己一個大大的慶祝。" />
+
   <style>
     :root{
-      --bg:#120a2a;
-      --card:#1a1036;
-      --text:#f2f2f2;
-      --muted:#b7b0c8;
-      --line:rgba(255,255,255,.10);
-      --btn:#c9b6ff;
-      --btnText:#120a2a;
-      --radius:18px;
-      --pad:22px;
-      --measure:62ch;
+      /* 喵喵正向宇宙色系（亮、柔、晨光感） */
+      --bgTop: #f7d8df;
+      --bgMid: #f3e7f2;
+      --bgBot: #cfe8f7;
+
+      --card: rgba(255,255,255,.68);
+      --card2: rgba(255,255,255,.55);
+
+      --text: #222222;
+      --muted: rgba(34,34,34,.62);
+      --line: rgba(34,34,34,.10);
+
+      /* 主按鈕：紫→金，延續你今日指引的氣質 */
+      --btnGrad1: #7b67ff;
+      --btnGrad2: #f4c35f;
+      --btnText: #1a1230;
+
+      --radius: 20px;
+      --measure: 58ch;
     }
+
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-      background: radial-gradient(1000px 500px at 20% 10%, rgba(201,182,255,.18), transparent 60%),
-                  radial-gradient(900px 500px at 80% 30%, rgba(255,255,255,.08), transparent 65%),
-                  var(--bg);
+
+      /* 亮宇宙背景：粉→奶白→淡藍 */
+      background:
+        radial-gradient(900px 520px at 20% 10%, rgba(255,255,255,.65), transparent 62%),
+        radial-gradient(900px 520px at 80% 18%, rgba(255,255,255,.55), transparent 65%),
+        linear-gradient(180deg, var(--bgTop) 0%, var(--bgMid) 42%, var(--bgBot) 100%);
+
       color:var(--text);
       min-height:100vh;
       display:flex;
@@ -32,21 +47,32 @@
       justify-content:center;
       padding:24px;
     }
+
     .wrap{width:min(920px,100%)}
+
     .card{
-      background:rgba(26,16,54,.92);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:28px;
-      box-shadow: 0 18px 60px rgba(0,0,0,.35);
-      backdrop-filter: blur(6px);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 18px 55px rgba(0,0,0,.10);
+      backdrop-filter: blur(10px);
     }
+
     h1{
       margin:0 0 6px 0;
       font-size:24px;
       letter-spacing:.5px;
+      text-align:center;
     }
-    p{margin:0 0 18px 0;color:var(--muted);line-height:1.6}
+
+    p{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      line-height:1.6;
+      text-align:center;
+    }
+
     .grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -55,70 +81,130 @@
     @media (max-width:720px){
       .grid{grid-template-columns:1fr}
     }
-    label{display:block;font-size:14px;color:var(--muted);margin:10px 0 6px}
+
+    label{
+      display:block;
+      font-size:14px;
+      color:var(--muted);
+      margin:10px 0 6px;
+    }
+
     input, textarea{
       width:100%;
       padding:12px 12px;
       border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:var(--text);
+      border:1px solid rgba(34,34,34,.12);
+      background: rgba(255,255,255,.78);
+      color: var(--text);
       outline:none;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+    }
+    input:focus, textarea:focus{
+      border-color: rgba(123,103,255,.40);
+      box-shadow: 0 0 0 4px rgba(123,103,255,.14), inset 0 1px 0 rgba(255,255,255,.7);
     }
     textarea{min-height:88px;resize:vertical}
+
     .actions{
       display:flex;
       gap:10px;
       margin-top:18px;
       flex-wrap:wrap;
+      justify-content:center;
     }
+
     button{
       cursor:pointer;
       border:0;
       border-radius:999px;
       padding:12px 16px;
-      font-weight:700;
+      font-weight:800;
       letter-spacing:.3px;
     }
+
     .primary{
-      background:var(--btn);
-      color:var(--btnText);
+      background: linear-gradient(90deg, var(--btnGrad1), var(--btnGrad2));
+      color: var(--btnText);
+      box-shadow: 0 10px 26px rgba(123,103,255,.18);
     }
+
     .ghost{
-      background:transparent;
-      border:1px solid var(--line);
-      color:var(--text);
+      background: rgba(255,255,255,.55);
+      border:1px solid rgba(34,34,34,.12);
+      color: var(--text);
     }
-    .small{font-size:13px;color:var(--muted);margin-top:10px}
+
+    .small{
+      font-size:13px;
+      color:var(--muted);
+      margin-top:10px;
+      text-align:center;
+    }
 
     /* result view */
     .result{
       display:none;
       text-align:center;
-      padding:34px 18px;
+      padding:18px 10px;
     }
+
+    /* 讓結果像可截圖卡片 */
+    .resultCard{
+      margin: 0 auto;
+      width: min(620px, 100%);
+      background: var(--card2);
+      border: 1px solid rgba(34,34,34,.10);
+      border-radius: 22px;
+      padding: 22px 18px;
+      box-shadow: 0 18px 55px rgba(0,0,0,.10);
+      backdrop-filter: blur(10px);
+    }
+
     .big{
       font-size:28px;
       line-height:1.35;
       margin:0 0 10px 0;
+      letter-spacing:.2px;
     }
+
     .meta{
       margin:0 auto;
       max-width:var(--measure);
-      color:var(--muted);
+      color: rgba(34,34,34,.70);
       line-height:1.8;
       font-size:16px;
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(34,34,34,.08);
+      border-radius: 18px;
+      padding: 14px 14px;
     }
+
     .badge{
       display:inline-block;
-      margin-top:16px;
+      margin-top:14px;
       padding:10px 14px;
       border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
+      border:1px solid rgba(34,34,34,.10);
+      background: rgba(255,255,255,.55);
+      font-weight:800;
+    }
+
+    .byline{
+      margin-top: 10px;
+      font-size: 14px;
+      color: rgba(34,34,34,.62);
+    }
+    .byline a{
+      color: rgba(123,103,255,.95);
+      text-decoration: none;
+      font-weight: 800;
+    }
+    .byline a:hover{
+      text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="card">
@@ -149,12 +235,24 @@
       </div>
 
       <div class="result" id="resultView" aria-live="polite">
-        <div class="big" id="headline"></div>
-        <div class="meta" id="detail"></div>
-        <div class="badge">🎉 你真的很棒！</div>
-        <div class="actions" style="justify-content:center">
-          <button class="primary" id="again">再放一次！</button>
-          <button class="ghost" id="back">回去再寫一個</button>
+        <div class="resultCard">
+          <div class="big" id="headline"></div>
+          <div class="meta" id="detail"></div>
+
+          <div class="badge">🎉 你真的很棒！</div>
+
+          <!-- ✅ 你的連結（結果頁才出現） -->
+          <div class="byline">
+            ✨ 喵喵宇宙 🪐
+            <a href="https://meowmeowjiaojhu.github.io/links/" target="_blank" rel="noopener">
+              來找喵喵
+            </a>
+          </div>
+
+          <div class="actions" style="margin-top:16px;">
+            <button class="primary" id="again">再放一次！</button>
+            <button class="ghost" id="back">回去再寫一個</button>
+          </div>
         </div>
       </div>
     </div>
@@ -181,7 +279,6 @@
       const music = $("music");
 
       function fmtDate(v){
-        // v is "YYYY-MM-DD"
         if(!v) return "";
         const [y,m,d] = v.split("-").map(Number);
         if(!y || !m || !d) return "";
@@ -189,12 +286,10 @@
       }
 
       function playCelebrationSound(){
-        // Try mp3 first
         music.currentTime = 0;
         const p = music.play();
         if (p && typeof p.catch === "function") {
           p.catch(() => {
-            // fallback: simple beep via WebAudio
             try{
               const ctx = new (window.AudioContext || window.webkitAudioContext)();
               const o = ctx.createOscillator();
@@ -218,11 +313,9 @@
         (function frame() {
           confetti({ particleCount: 6, spread: 70, startVelocity: 45, origin: { x: 0.2, y: 0.7 } });
           confetti({ particleCount: 6, spread: 70, startVelocity: 45, origin: { x: 0.8, y: 0.7 } });
-
           if (Date.now() < end) requestAnimationFrame(frame);
         })();
 
-        // final big burst
         setTimeout(()=>confetti({ particleCount: 180, spread: 110, startVelocity: 55, origin: { x: 0.5, y: 0.55 } }), 250);
       }
 
@@ -247,7 +340,6 @@
 
       $("demo").addEventListener("click", () => {
         nameEl.value = "喵喵";
-        // set today's date by default
         const t = new Date();
         const yyyy = t.getFullYear();
         const mm = String(t.getMonth()+1).padStart(2,"0");
