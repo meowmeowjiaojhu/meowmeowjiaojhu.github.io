@@ -1,6 +1,21 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
+
+  <!-- OG / 社群分享 -->
+<meta property="og:title" content="完成就放炮 🎆｜喵喵的成就慶祝頁" />
+<meta property="og:description" content="寫下你完成的事，讓宇宙知道你真的很棒。" />
+<meta property="og:image" content="https://meowmeowjiaojhu.github.io/celebrate/MeoeOG.PNG" />
+<meta property="og:url" content="https://meowmeowjiaojhu.github.io/celebrate/" />
+<meta property="og:type" content="website" />
+
+<!-- Favicon（celebrate 專屬，用相對路徑） -->
+<link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+<link rel="shortcut icon" href="./favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+<link rel="manifest" href="./site.webmanifest" />
+  
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>完成就放炮！</title>
@@ -306,18 +321,19 @@
         }
       }
 
-      function fireConfetti(){
-        const duration = 10000;
-        const end = Date.now() + duration;
+function fireConfetti(){
+  const duration = 10000;
+  const end = Date.now() + duration;
 
-        (function frame() {
-          confetti({ particleCount: 6, spread: 70, startVelocity: 45, origin: { x: 0.2, y: 0.7 } });
-          confetti({ particleCount: 6, spread: 70, startVelocity: 45, origin: { x: 0.8, y: 0.7 } });
-          if (Date.now() < end) requestAnimationFrame(frame);
-        })();
+  (function frame() {
+    confetti({ particleCount: 6, spread: 70, startVelocity: 45, origin: { x: 0.2, y: 0.7 } });
+    confetti({ particleCount: 6, spread: 70, startVelocity: 45, origin: { x: 0.8, y: 0.7 } });
+    if (Date.now() < end) requestAnimationFrame(frame);
+  })();
 
-        setTimeout(()=>confetti({ particleCount: 180, spread: 110, startVelocity: 55, origin: { x: 0.5, y: 0.55 } }), 250);
-      }
+  // ✅ 結尾再來一發大的
+  setTimeout(()=>confetti({ particleCount: 180, spread: 110, startVelocity: 55, origin: { x: 0.5, y: 0.55 } }), duration - 350);
+}
 
       function showResult(n, d, what){
         const name = (n || "你").trim();
