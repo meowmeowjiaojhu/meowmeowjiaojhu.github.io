@@ -144,3 +144,11 @@ body{
   text-align:center;
   opacity:.9;
 }
+
+@media (max-width: 480px){
+  .card{
+    box-shadow:
+      0 16px 32px rgba(0,0,0,.6),
+      0 0 42px rgba(201,182,255,.28);
+  }
+}
