@@ -147,13 +147,15 @@ body{
 
 @media (max-width: 480px){
   .card{
-    /* 高度：讓卡片浮起來 */
-    box-shadow: 0 18px 36px rgba(0,0,0,.60);
+    /* 1️⃣ 浮起來的本體陰影（不發光） */
+    box-shadow: 
+      0 14px 28px rgba(0,0,0,.45);
 
-filter:
-  drop-shadow(0 8px 18px rgba(201,182,255,.35))
-  drop-shadow(0 22px 36px rgba(201,182,255,.45));
-
+    /* 2️⃣ 光暈只負責「包邊＋下緣存在感」 */
+    filter:
+      drop-shadow(0 0 14px rgba(201,182,255,.28))   /* 整圈薄光 */
+      drop-shadow(0 6px 18px rgba(201,182,255,.22)); /* 下緣柔光 */
   }
 }
+
 
