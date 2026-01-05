@@ -71,12 +71,39 @@ body{
     0 18px 36px rgba(0,0,0,.55);
 }
 
+.card{
+  position: relative;
+  background: #1e1440;
+  border-radius: 22px;
+  padding: 32px 26px;
+  min-height: 220px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+
+  box-shadow:
+    0 18px 36px rgba(0,0,0,.55);
+}
+
 .card::before{
   content:"";
   position:absolute;
-  inset:10px;              /* 內縮，才像牌 */
+  inset:10px;
   border-radius:16px;
-  border:1px solid rgba(205,175,95,.55); /* 霧金內框 */
+
+  border: 2px solid rgba(205,175,95,.85);
+  pointer-events:none;
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  inset:13px;              /* 比 before 再縮一點 */
+  border-radius:14px;
+
+  border: 1px solid rgba(0,0,0,.35);
   pointer-events:none;
 }
 
