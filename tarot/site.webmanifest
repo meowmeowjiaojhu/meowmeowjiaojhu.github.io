@@ -1,0 +1,22 @@
+{
+  "name": "塔羅指引｜喵喵教主",
+  "short_name": "喵喵塔羅",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#120a2a",
+  "theme_color": "#120a2a",
+  "icons": [
+    {
+      "src": "/assets/brand/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/brand/meowlogoandroid512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
