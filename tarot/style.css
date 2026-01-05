@@ -44,8 +44,8 @@ body{
   height:64px;
   object-fit:contain;
   border-radius:50%;
-  background:rgba(255,255,255,.08);
-  padding:8px;
+  background:transparent;
+  padding:0;
 }
 
 .hint{
