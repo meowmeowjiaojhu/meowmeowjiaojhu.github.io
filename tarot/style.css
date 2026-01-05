@@ -64,10 +64,11 @@ body{
   justify-content: center;
   gap: 12px;
 
-  border: 1px solid rgba(212,175,55,.5);
+  border: 1px solid rgba(215,185,110,.6);
+
   box-shadow:
-    0 0 0 1px rgba(212,175,55,.18),
-    0 12px 30px rgba(0,0,0,.35);
+    0 0 0 1px rgba(215,185,110,.25),   /* 金色外暈 */
+    0 16px 36px rgba(0,0,0,.5);        /* 深層浮起 */
 }
 
 .card-title{
