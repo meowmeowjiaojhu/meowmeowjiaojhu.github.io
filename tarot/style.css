@@ -55,15 +55,19 @@ body{
 }
 
 .card{
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:28px 22px;
-  min-height:220px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:12px;
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+
+  border: 1px solid rgba(212,175,55,.5);
+  box-shadow:
+    0 0 0 1px rgba(212,175,55,.18),
+    0 12px 30px rgba(0,0,0,.35);
 }
 
 .card-title{
