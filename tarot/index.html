@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>塔羅指引｜喵喵教主</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="./site.webmanifest">
+  <meta name="theme-color" content="#120a2a">
+
+  <!-- 基本樣式 -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main class="app">
+    <header class="top">
+      <img class="logo" src="/assets/brand/meowog.png" alt="喵喵教主">
+      <p class="hint">按住按鈕 3 秒，抽一張指引</p>
+    </header>
+
+    <section class="card" id="card">
+      <div class="card-title" id="cardTitle">今日塔羅指引</div>
+      <div class="card-line" id="cardLine">準備好了就開始。</div>
+    </section>
+
+    <button class="holdBtn" id="holdBtn" aria-label="按住抽牌">
+      按住抽牌
+      <span class="ring" id="ring"></span>
+    </button>
+
+    <footer class="footer">
+      <a href="/links/" class="smallLink">喵喵的服務與連結</a>
+    </footer>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
