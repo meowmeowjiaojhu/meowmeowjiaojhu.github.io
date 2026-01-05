@@ -55,20 +55,29 @@ body{
 }
 
 .card{
-  background: var(--paper);
-  border-radius: var(--radius);
-  padding: 28px 22px;
+  position: relative;
+  background: #1e1440; /* 比 bg 稍亮一階 */
+  border-radius: 20px;
+  padding: 30px 24px;
   min-height: 220px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 12px;
 
-  border: 1px solid rgba(215,185,110,.6);
-
+  /* 卡片被托起來 */
   box-shadow:
-    0 0 0 1px rgba(215,185,110,.25),   /* 金色外暈 */
-    0 16px 36px rgba(0,0,0,.5);        /* 深層浮起 */
+    0 18px 36px rgba(0,0,0,.55);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:10px;              /* 內縮，才像牌 */
+  border-radius:16px;
+  border:1px solid rgba(205,175,95,.55); /* 霧金內框 */
+  pointer-events:none;
 }
 
 .card-title{
