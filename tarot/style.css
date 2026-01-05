@@ -1,0 +1,121 @@
+:root{
+  --bg:#120a2a;
+  --paper:#1a1036;
+  --text:#f2f2f2;
+  --muted:#b7b0c8;
+  --line:rgba(255,255,255,.10);
+  --link:#c9b6ff;
+  --linkHover:#e2d8ff;
+
+  --radius:18px;
+  --pad:22px;
+  --max:560px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: system-ui, -apple-system, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+
+.app{
+  min-height:100%;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:26px 18px 30px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.top{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  margin-top:8px;
+}
+
+.logo{
+  width:56px;
+  height:56px;
+  border-radius:14px;
+  background:rgba(255,255,255,.06);
+}
+
+.hint{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:28px 22px;
+  min-height:220px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:12px;
+}
+
+.card-title{
+  color:var(--muted);
+  font-size:14px;
+  letter-spacing:.02em;
+}
+
+.card-line{
+  font-size:22px;
+  line-height:1.45;
+}
+
+.holdBtn{
+  position:relative;
+  width:100%;
+  padding:16px 18px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+  font-size:16px;
+  cursor:pointer;
+  user-select:none;
+  overflow:hidden;
+}
+
+.holdBtn:active{
+  transform: translateY(1px);
+}
+
+.ring{
+  position:absolute;
+  inset:0;
+  border-radius:999px;
+  pointer-events:none;
+  background:linear-gradient(90deg, rgba(201,182,255,.0), rgba(201,182,255,.35), rgba(201,182,255,.0));
+  transform:translateX(-110%);
+  opacity:0;
+}
+
+.smallLink{
+  color:var(--link);
+  text-decoration:none;
+  font-size:12px;
+}
+
+.smallLink:hover{
+  color:var(--linkHover);
+  text-decoration:underline;
+}
+
+.footer{
+  margin-top:auto;
+  text-align:center;
+  opacity:.9;
+}
