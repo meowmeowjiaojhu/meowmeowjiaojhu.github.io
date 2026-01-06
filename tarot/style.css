@@ -145,6 +145,13 @@ body{
   opacity:.9;
 }
 
+.brand-subtitle {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
 @media (max-width: 480px){
   .card{
     /* 1️⃣ 浮起來的本體陰影（不發光） */
