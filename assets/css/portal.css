@@ -1,0 +1,105 @@
+/* =========================
+   portal.css
+   只影響 /portal/
+   ========================= */
+
+#portal{
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+/* ───── 上方品牌區 ───── */
+
+#portal .top{
+  text-align: center;
+  padding: 20px 0 12px;
+}
+
+#portal .logo{
+  width: 88px;
+  height: 88px;
+  border-radius: 22px;
+  display: block;
+  margin: 0 auto 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+}
+
+#portal .page-title{
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+#portal .brand-subtitle{
+  margin: 6px 0 0;
+  font-size: .95rem;
+  opacity: .85;
+}
+
+/* ───── 區塊 ───── */
+
+#portal .group{
+  margin-top: 36px;
+}
+
+#portal .group h2{
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+/* ───── 卡片格 ───── */
+
+#portal .grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+#portal .card{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.06);
+  text-decoration: none;
+  color: inherit;
+}
+
+#portal .card:hover{
+  background: rgba(255,255,255,.1);
+}
+
+#portal .card .icon{
+  font-size: 1.4rem;
+  width: 32px;
+  text-align: center;
+}
+
+#portal .card .text{
+  flex: 1;
+}
+
+#portal .card .name{
+  display: block;
+  font-weight: 600;
+}
+
+#portal .card .desc{
+  display: block;
+  font-size: .85rem;
+  opacity: .7;
+}
+
+#portal .card .arrow{
+  opacity: .5;
+}
+
+/* ───── footer ───── */
+
+#portal .footer{
+  margin-top: 48px;
+  text-align: center;
+  opacity: .5;
+  font-size: .85rem;
+}
