@@ -3,103 +3,158 @@
    只影響 /portal/
    ========================= */
 
-#portal{
+#portal.portal-wrap{
   max-width: 680px;
   margin: 0 auto;
   padding: 24px 16px 64px;
 }
 
-/* ───── 上方品牌區 ───── */
+/* ───── Hero / 品牌區 ───── */
 
-#portal .top{
-  text-align: center;
-  padding: 20px 0 12px;
+#portal .portal-hero{
+  padding: 8px 0 18px;
 }
 
-#portal .logo{
-  width: 88px;
-  height: 88px;
+#portal .portal-heroTop{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  opacity: .85;
+  font-size: .95rem;
+  margin-bottom: 14px;
+}
+
+#portal .portal-heroTop:hover{
+  opacity: 1;
+}
+
+#portal .portal-brand{
+  text-align: center;
+  padding: 10px 0 8px;
+}
+
+#portal .portal-logo{
+  width: 92px;
+  height: 92px;
   border-radius: 22px;
   display: block;
   margin: 0 auto 14px;
   box-shadow: 0 10px 28px rgba(0,0,0,.35);
 }
 
-#portal .page-title{
+#portal .portal-title{
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.55rem;
+  letter-spacing: .5px;
 }
 
-#portal .brand-subtitle{
-  margin: 6px 0 0;
+#portal .portal-subtitle{
+  margin: 8px 0 0;
   font-size: .95rem;
   opacity: .85;
 }
 
-/* ───── 區塊 ───── */
+/* ───── 清單 / 按鈕 ───── */
 
-#portal .group{
-  margin-top: 36px;
-}
-
-#portal .group h2{
-  margin-bottom: 12px;
-  font-size: 1.1rem;
-}
-
-/* ───── 卡片格 ───── */
-
-#portal .grid{
+#portal .portal-list{
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
+  margin-top: 18px;
 }
 
-#portal .card{
+#portal .portal-item{
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 14px 16px;
+  padding: 16px 16px;
   border-radius: 18px;
+
   background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
   text-decoration: none;
   color: inherit;
+
+  transition: transform .08s ease, background .12s ease, border-color .12s ease;
 }
 
-#portal .card:hover{
-  background: rgba(255,255,255,.1);
+#portal .portal-item:hover{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.18);
+  transform: translateY(-1px);
 }
 
-#portal .card .icon{
-  font-size: 1.4rem;
-  width: 32px;
-  text-align: center;
+#portal .portal-emoji{
+  width: 36px;
+  height: 36px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.08);
+  font-size: 1.25rem;
+  flex: 0 0 36px;
 }
 
-#portal .card .text{
+#portal .portal-text{
   flex: 1;
+  min-width: 0;
 }
 
-#portal .card .name{
+#portal .portal-name{
   display: block;
-  font-weight: 600;
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-#portal .card .desc{
+#portal .portal-desc{
   display: block;
-  font-size: .85rem;
-  opacity: .7;
+  margin-top: 4px;
+  font-size: .86rem;
+  opacity: .75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-#portal .card .arrow{
-  opacity: .5;
+#portal .portal-arrow{
+  opacity: .55;
+  font-size: 1.2rem;
+  flex: 0 0 auto;
 }
 
-/* ───── footer ───── */
+/* ───── Footer ───── */
 
-#portal .footer{
-  margin-top: 48px;
+#portal .portal-footer{
+  margin-top: 40px;
   text-align: center;
-  opacity: .5;
-  font-size: .85rem;
+  opacity: .7;
+  font-size: .9rem;
+}
+
+#portal .portal-footerLink{
+  color: inherit;
+  text-decoration: none;
+  opacity: .9;
+}
+
+#portal .portal-footerLink:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+
+#portal .portal-dot{
+  margin: 0 8px;
+  opacity: .6;
+}
+
+/* ───── 桌機時稍微更寬一點 ───── */
+@media (min-width: 720px){
+  #portal.portal-wrap{
+    padding: 28px 18px 72px;
+  }
 }
