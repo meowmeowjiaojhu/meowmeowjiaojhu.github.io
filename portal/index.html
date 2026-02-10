@@ -22,7 +22,7 @@
   <meta name="twitter:description" content="動物溝通、塔羅占卜、星盤推運與療癒小工具的分類入口。" />
   <meta name="twitter:image" content="https://meowmeowjiaojhu.github.io/assets/brand/meowog.png" />
 
-  <!-- Favicon / PWA（你 assets/brand 這套很漂亮，保留） -->
+  <!-- Favicon / PWA -->
   <link rel="icon" href="/assets/brand/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
@@ -37,14 +37,16 @@
 
 <body>
   <main id="portal" class="portal-wrap">
-    <!-- 上方品牌區：你想要的「有圖」那種 -->
+    <!-- Hero / 品牌區 -->
     <header class="portal-hero" role="banner">
-      <a class="portal-heroTop" href="/" aria-label="回到連結入口">
-        <span class="portal-back" aria-hidden="true">←</span>
-        <span class="portal-backText">回到連結入口</span>
-      </a>
+      <nav class="portal-topnav" aria-label="頂部導覽">
+        <a class="portal-backLink" href="/">
+          <span class="portal-backIcon" aria-hidden="true">←</span>
+          <span class="portal-backText">回到連結入口</span>
+        </a>
+      </nav>
 
-      <div class="portal-brand">
+      <div class="portal-brand" aria-label="喵喵教主">
         <img
           class="portal-logo"
           src="/assets/brand/meowlogoandroid512.png"
@@ -52,17 +54,19 @@
           width="96"
           height="96"
           loading="eager"
+          decoding="async"
         />
         <h1 class="portal-title">喵喵教主</h1>
         <p class="portal-subtitle">務實接地氣，陪你創造未來</p>
       </div>
     </header>
 
-    <!-- 主按鈕清單（不再用 .card，避免全站撞名） -->
+    <!-- 入口清單 -->
     <section class="portal-section" aria-label="服務入口">
-      <div class="portal-list">
+      <div class="portal-list" role="list">
+
         <!-- 動物溝通 -->
-        <a class="portal-item" href="/plztailme/">
+        <a class="portal-item" role="listitem" href="/plztailme/">
           <span class="portal-emoji" aria-hidden="true">🦄</span>
           <span class="portal-text">
             <span class="portal-name">與毛孩話家常</span>
@@ -71,7 +75,7 @@
           <span class="portal-arrow" aria-hidden="true">›</span>
         </a>
 
-        <a class="portal-item" href="/the-pawer-tails/">
+        <a class="portal-item" role="listitem" href="/the-pawer-tails/">
           <span class="portal-emoji" aria-hidden="true">✨</span>
           <span class="portal-text">
             <span class="portal-name">傳遞光與愛</span>
@@ -80,8 +84,8 @@
           <span class="portal-arrow" aria-hidden="true">›</span>
         </a>
 
-        <!-- 塔羅 / 對話 -->
-        <a class="portal-item" href="/chat-with-meow/">
+        <!-- 對話 / 塔羅 -->
+        <a class="portal-item" role="listitem" href="/chat-with-meow/">
           <span class="portal-emoji" aria-hidden="true">🔮</span>
           <span class="portal-text">
             <span class="portal-name">與喵聊聊</span>
@@ -90,7 +94,7 @@
           <span class="portal-arrow" aria-hidden="true">›</span>
         </a>
 
-        <a class="portal-item" href="/abundance-gate/">
+        <a class="portal-item" role="listitem" href="/abundance-gate/">
           <span class="portal-emoji" aria-hidden="true">💎</span>
           <span class="portal-text">
             <span class="portal-name">豐盛之門</span>
@@ -99,7 +103,7 @@
           <span class="portal-arrow" aria-hidden="true">›</span>
         </a>
 
-        <a class="portal-item" href="/pocket-tarot/">
+        <a class="portal-item" role="listitem" href="/pocket-tarot/">
           <span class="portal-emoji" aria-hidden="true">🐧</span>
           <span class="portal-text">
             <span class="portal-name">問問塔羅</span>
@@ -109,7 +113,7 @@
         </a>
 
         <!-- 星盤推運 -->
-        <a class="portal-item" href="/career-notebook/">
+        <a class="portal-item" role="listitem" href="/career-notebook/">
           <span class="portal-emoji" aria-hidden="true">🗒️</span>
           <span class="portal-text">
             <span class="portal-name">事業筆記小本本</span>
@@ -118,7 +122,7 @@
           <span class="portal-arrow" aria-hidden="true">›</span>
         </a>
 
-        <a class="portal-item" href="/relationship-notebook/">
+        <a class="portal-item" role="listitem" href="/relationship-notebook/">
           <span class="portal-emoji" aria-hidden="true">💗</span>
           <span class="portal-text">
             <span class="portal-name">自在關係小本本</span>
@@ -127,7 +131,7 @@
           <span class="portal-arrow" aria-hidden="true">›</span>
         </a>
 
-        <a class="portal-item" href="/rhythm-memo/">
+        <a class="portal-item" role="listitem" href="/rhythm-memo/">
           <span class="portal-emoji" aria-hidden="true">📒</span>
           <span class="portal-text">
             <span class="portal-name">人生節奏備忘錄</span>
@@ -136,8 +140,8 @@
           <span class="portal-arrow" aria-hidden="true">›</span>
         </a>
 
-        <!-- 靈氣（你剛剛截圖有這個，我先幫你放一個位置；路徑你之後改） -->
-        <a class="portal-item" href="/reiki/">
+        <!-- 靈氣（路徑可之後改） -->
+        <a class="portal-item" role="listitem" href="/reiki/">
           <span class="portal-emoji" aria-hidden="true">🫧</span>
           <span class="portal-text">
             <span class="portal-name">喵掌花</span>
@@ -147,7 +151,7 @@
         </a>
 
         <!-- 小玩意 -->
-        <a class="portal-item" href="/today/">
+        <a class="portal-item" role="listitem" href="/today/">
           <span class="portal-emoji" aria-hidden="true">🌿</span>
           <span class="portal-text">
             <span class="portal-name">今日指引</span>
@@ -156,7 +160,7 @@
           <span class="portal-arrow" aria-hidden="true">›</span>
         </a>
 
-        <a class="portal-item" href="/celebrate/">
+        <a class="portal-item" role="listitem" href="/celebrate/">
           <span class="portal-emoji" aria-hidden="true">🎉</span>
           <span class="portal-text">
             <span class="portal-name">完成就放炮</span>
@@ -164,10 +168,11 @@
           </span>
           <span class="portal-arrow" aria-hidden="true">›</span>
         </a>
+
       </div>
     </section>
 
-    <footer class="portal-footer">
+    <footer class="portal-footer" role="contentinfo">
       <a class="portal-footerLink" href="/links/">來找喵喵</a>
       <span class="portal-dot" aria-hidden="true">·</span>
       <span>© 喵喵教主</span>
