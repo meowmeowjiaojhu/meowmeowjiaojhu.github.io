@@ -8,185 +8,311 @@
   <!-- 全站地基：只吃 site.css -->
   <link rel="stylesheet" href="/assets/css/site.css" />
 
-  <!-- 可選：若你的 site.css 內已經有深色背景就不用這段 style
-       這段只做「最基本的閱讀舒適」，不影響其他頁 -->
+  <!-- 本頁專用：只影響 #portal（不污染其他頁） -->
   <style>
-    .wrap { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
-    .sub { opacity: .85; margin-top: 8px; }
-    .section { margin-top: 22px; }
-    .section h2 { margin: 0 0 10px; font-size: 18px; }
-    .list { display: grid; gap: 12px; }
-    .hint { opacity: .75; font-size: 13px; margin-top: 10px; }
-    .top-actions { margin-top: 16px; display: grid; gap: 12px; }
-    .footer { margin-top: 28px; opacity: .75; font-size: 13px; }
-    a.card {
-      display: block; padding: 14px 16px; border-radius: 14px;
+    /* ===== Page frame ===== */
+    #portal{
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+    #portal .sub{ opacity: .85; margin-top: 8px; }
+    #portal .group{ margin-top: 26px; }
+    #portal .group h2{
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: .2px;
+    }
+    #portal .hint{
+      opacity: .75;
+      font-size: 13px;
+      margin: 10px 2px 0;
+    }
+    #portal .footer{
+      margin-top: 34px;
+      opacity: .75;
+      font-size: 13px;
+    }
+
+    /* ===== Button cards (入口按鈕) ===== */
+    #portal .grid{
+      display: grid;
+      gap: 12px;
+    }
+
+    #portal .card{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      width: 100%;
+      padding: 14px 14px;
+      border-radius: 14px;
+
       text-decoration: none;
-    
-/* ===== Portal Cards ===== */
-.portal-group { margin: 28px 0; }
-.portal-title {
-  margin: 0 0 12px;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: .2px;
-}
+      color: inherit;
 
-.portal-card{
-  display: flex;
-  align-items: center;
-  gap: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
 
-  width: 100%;
-  padding: 14px 14px;
-  margin: 10px 0;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
 
-  text-decoration: none;
-  color: inherit;
+      transition: transform .12s ease, background-color .12s ease, border-color .12s ease, box-shadow .12s ease;
+    }
 
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+    #portal .icon{
+      flex: 0 0 auto;
+      font-size: 18px;
+      line-height: 1;
+      opacity: .95;
+    }
 
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent; /* 手機點擊不閃藍 */
-  touch-action: manipulation;
+    #portal .text{
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+    }
 
-  transition: transform .12s ease, background-color .12s ease, border-color .12s ease, box-shadow .12s ease;
-}
+    #portal .name{
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-.portal-icon{
-  flex: 0 0 auto;
-  font-size: 18px;
-  line-height: 1;
-  opacity: .95;
-}
+    #portal .desc{
+      font-size: 13px;
+      opacity: .78;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-.portal-text{
-  display: grid;
-  gap: 2px;
-  min-width: 0; /* 防止長字把版面撐爆 */
-}
+    #portal .arrow{
+      margin-left: auto;
+      opacity: .55;
+      font-size: 22px;
+      line-height: 1;
+    }
 
-.portal-name{
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: .2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+    /* Desktop hover */
+    @media (hover: hover) and (pointer: fine){
+      #portal .card:hover{
+        background: rgba(255,255,255,.10);
+        border-color: rgba(255,255,255,.22);
+        transform: translateY(-1px);
+        box-shadow: 0 14px 28px rgba(0,0,0,.22);
+      }
+    }
 
-.portal-desc{
-  font-size: 13px;
-  opacity: .78;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+    /* Touch active */
+    #portal .card:active{
+      background: rgba(255,255,255,.12);
+      transform: translateY(0);
+    }
 
-.portal-arrow{
-  margin-left: auto;
-  opacity: .55;
-  font-size: 22px;
-  line-height: 1;
-}
+    /* Keyboard accessibility */
+    #portal .card:focus-visible{
+      outline: 2px solid rgba(255,255,255,.55);
+      outline-offset: 3px;
+    }
 
-/* Desktop hover */
-@media (hover: hover) and (pointer: fine) {
-  .portal-card:hover{
-    background: rgba(255,255,255,.10);
-    border-color: rgba(255,255,255,.22);
-    transform: translateY(-1px);
-    box-shadow: 0 14px 28px rgba(0,0,0,.22);
-  }
-}
+    /* ===== Top actions ===== */
+    #portal .top-actions{
+      margin-top: 16px;
+      display: grid;
+      gap: 12px;
+    }
+    #portal .top-actions .card{
+      padding: 12px 14px;
+    }
 
-/* Touch active (手機按下的手感) */
-.portal-card:active{
-  transform: translateY(0);
-  background: rgba(255,255,255,.12);
-}
-
-/* 鍵盤可達性（也會讓「可點感」更明確） */
-.portal-card:focus-visible{
-  outline: 2px solid rgba(255,255,255,.55);
-  outline-offset: 3px;
-}
-
-/* 手機排版微調 */
-@media (max-width: 520px){
-  .portal-title{ font-size: 17px; }
-  .portal-card{ padding: 14px 12px; border-radius: 16px; }
-  .portal-name{ font-size: 16px; }
-  .portal-desc{ font-size: 12.5px; }
-}
-      
+    /* ===== Mobile tweaks ===== */
+    @media (max-width: 520px){
+      #portal .group h2{ font-size: 17px; }
+      #portal .card{ padding: 14px 12px; border-radius: 16px; }
+      #portal .desc{ font-size: 12.5px; }
+    }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <!-- 頁首：只做定位與一句話 -->
+  <main id="portal">
     <header>
       <h1>喵喵服務分類入口</h1>
       <p class="sub">找到你想看的方向，再進去就好。</p>
 
-      <!-- 建議保留：回到入口頁 -->
       <div class="top-actions">
-        <a class="card" href="/">← 回到連結入口</a>
+        <a class="card" href="/">
+          <span class="icon">←</span>
+          <span class="text">
+            <span class="name">回到連結入口</span>
+            <span class="desc">回首頁總入口</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
       </div>
     </header>
 
     <!-- 1) 動物溝通 -->
-    <section class="section" aria-label="動物溝通">
+    <section class="group" aria-label="動物溝通">
       <h2>🐾 動物溝通</h2>
-      <div class="list">
-        <!-- TODO: 之後把 href 換成你的實際頁面/預約連結 -->
-        <a class="card" href="#" data-role="link">🦄 與毛孩話家常｜在世動物溝通</a>
-        <a class="card" href="#" data-role="link">✨ 傳遞光與愛｜離世動物溝通</a>
+      <div class="grid">
+        <a class="card" href="/plztailme/">
+          <span class="icon">🦄</span>
+          <span class="text">
+            <span class="name">與毛孩話家常</span>
+            <span class="desc">在世動物溝通</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+
+        <a class="card" href="/the-pawer-tails/">
+          <span class="icon">✨</span>
+          <span class="text">
+            <span class="name">傳遞光與愛</span>
+            <span class="desc">離世動物溝通</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
       </div>
-      <p class="hint">（之後你要加方案介紹或常見問題，也是在這一區加，不要散到別的區。）</p>
+      <p class="hint">（方案介紹或常見問題，建議都放在這一區下方。）</p>
     </section>
 
     <!-- 2) 塔羅占卜 -->
-    <section class="section" aria-label="塔羅占卜">
+    <section class="group" aria-label="塔羅占卜">
       <h2>🔮 塔羅占卜</h2>
-      <div class="list">
-        <a class="card" href="#" data-role="link">🔮 與喵聊聊｜對話與卡牌引導</a>
-        <a class="card" href="#" data-role="link">💎 豐盛之門｜塔羅 × 星盤（半年運）</a>
-        <a class="card" href="#" data-role="link">🐧 問問塔羅｜口袋裡的喵喵教主</a>
+      <div class="grid">
+        <a class="card" href="/chat-with-meow/">
+          <span class="icon">🔮</span>
+          <span class="text">
+            <span class="name">與喵聊聊</span>
+            <span class="desc">對話與卡牌引導</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+
+        <a class="card" href="/abundance-gate/">
+          <span class="icon">💎</span>
+          <span class="text">
+            <span class="name">豐盛之門</span>
+            <span class="desc">塔羅 × 星盤（半年運）</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+
+        <a class="card" href="/pocket-tarot/">
+          <span class="icon">🐧</span>
+          <span class="text">
+            <span class="name">問問塔羅</span>
+            <span class="desc">口袋裡的喵喵教主</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
       </div>
     </section>
 
     <!-- 3) 星盤推運 -->
-    <section class="section" aria-label="星盤推運">
+    <section class="group" aria-label="星盤推運">
       <h2>✨ 星盤推運</h2>
-      <div class="list">
-        <a class="card" href="#" data-role="link">🗒️ 事業筆記小本本｜星盤推運</a>
-        <a class="card" href="#" data-role="link">💗 自在關係小本本｜星盤推運</a>
-        <a class="card" href="#" data-role="link">📒 人生節奏備忘錄｜塔羅流年 × 星盤推運</a>
+      <div class="grid">
+        <a class="card" href="/career-notebook/">
+          <span class="icon">🗒️</span>
+          <span class="text">
+            <span class="name">事業筆記小本本</span>
+            <span class="desc">星盤推運</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+
+        <a class="card" href="/relationship-notebook/">
+          <span class="icon">💗</span>
+          <span class="text">
+            <span class="name">自在關係小本本</span>
+            <span class="desc">星盤推運</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+
+        <a class="card" href="/rhythm-memo/">
+          <span class="icon">📒</span>
+          <span class="text">
+            <span class="name">人生節奏備忘錄</span>
+            <span class="desc">塔羅流年 × 星盤推運</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
       </div>
     </section>
 
     <!-- 4) 來找喵喵 -->
-    <section class="section" aria-label="來找喵喵">
+    <section class="group" aria-label="來找喵喵">
       <h2>💬 來找喵喵</h2>
-      <div class="list">
-        <a class="card" href="#" data-role="link">📱 Line 官方帳號</a>
-        <a class="card" href="#" data-role="link">📷 Instagram</a>
-        <a class="card" href="#" data-role="link">🧵 Threads</a>
-        <a class="card" href="#" data-role="link">🌍 喵喵星球 Discord</a>
+      <div class="grid">
+        <a class="card" href="https://line.me/">
+          <span class="icon">📱</span>
+          <span class="text">
+            <span class="name">Line 官方帳號</span>
+            <span class="desc">預約與訊息</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+
+        <a class="card" href="https://www.instagram.com/">
+          <span class="icon">📷</span>
+          <span class="text">
+            <span class="name">Instagram</span>
+            <span class="desc">日常與公告</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+
+        <a class="card" href="https://www.threads.net/">
+          <span class="icon">🧵</span>
+          <span class="text">
+            <span class="name">Threads</span>
+            <span class="desc">動物溝通內容</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+
+        <a class="card" href="/discord/">
+          <span class="icon">🌍</span>
+          <span class="text">
+            <span class="name">喵喵星球 Discord</span>
+            <span class="desc">文章與宇宙基地</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
       </div>
     </section>
 
     <!-- 5) 有趣小玩意兒 -->
-    <section class="section" aria-label="有趣小玩意兒">
+    <section class="group" aria-label="有趣小玩意兒">
       <h2>🎈 有趣小玩意兒</h2>
-      <div class="list">
-        <a class="card" href="/today/" data-role="link">🌿 今日指引｜給今天的你</a>
-        <a class="card" href="#" data-role="link">🎉 完成就放炮｜幫你拍拍手</a>
+      <div class="grid">
+        <a class="card" href="/today/">
+          <span class="icon">🌿</span>
+          <span class="text">
+            <span class="name">今日指引</span>
+            <span class="desc">給今天的你</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+
+        <a class="card" href="/celebration/">
+          <span class="icon">🎉</span>
+          <span class="text">
+            <span class="name">完成就放炮</span>
+            <span class="desc">幫你拍拍手</span>
+          </span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
       </div>
     </section>
 
