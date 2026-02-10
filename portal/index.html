@@ -22,7 +22,107 @@
     a.card {
       display: block; padding: 14px 16px; border-radius: 14px;
       text-decoration: none;
-    }
+    
+/* ===== Portal Cards ===== */
+.portal-group { margin: 28px 0; }
+.portal-title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+.portal-card{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  padding: 14px 14px;
+  margin: 10px 0;
+
+  text-decoration: none;
+  color: inherit;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* 手機點擊不閃藍 */
+  touch-action: manipulation;
+
+  transition: transform .12s ease, background-color .12s ease, border-color .12s ease, box-shadow .12s ease;
+}
+
+.portal-icon{
+  flex: 0 0 auto;
+  font-size: 18px;
+  line-height: 1;
+  opacity: .95;
+}
+
+.portal-text{
+  display: grid;
+  gap: 2px;
+  min-width: 0; /* 防止長字把版面撐爆 */
+}
+
+.portal-name{
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.portal-desc{
+  font-size: 13px;
+  opacity: .78;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.portal-arrow{
+  margin-left: auto;
+  opacity: .55;
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Desktop hover */
+@media (hover: hover) and (pointer: fine) {
+  .portal-card:hover{
+    background: rgba(255,255,255,.10);
+    border-color: rgba(255,255,255,.22);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(0,0,0,.22);
+  }
+}
+
+/* Touch active (手機按下的手感) */
+.portal-card:active{
+  transform: translateY(0);
+  background: rgba(255,255,255,.12);
+}
+
+/* 鍵盤可達性（也會讓「可點感」更明確） */
+.portal-card:focus-visible{
+  outline: 2px solid rgba(255,255,255,.55);
+  outline-offset: 3px;
+}
+
+/* 手機排版微調 */
+@media (max-width: 520px){
+  .portal-title{ font-size: 17px; }
+  .portal-card{ padding: 14px 12px; border-radius: 16px; }
+  .portal-name{ font-size: 16px; }
+  .portal-desc{ font-size: 12.5px; }
+}
+      
   </style>
 </head>
 
