@@ -1,11 +1,98 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <title>喵喵｜服務分類入口</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>喵喵教主｜服務分類入口</title>
+
+  <!-- 全站地基：只吃 site.css -->
+  <link rel="stylesheet" href="/assets/css/site.css" />
+
+  <!-- 可選：若你的 site.css 內已經有深色背景就不用這段 style
+       這段只做「最基本的閱讀舒適」，不影響其他頁 -->
+  <style>
+    .wrap { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+    .sub { opacity: .85; margin-top: 8px; }
+    .section { margin-top: 22px; }
+    .section h2 { margin: 0 0 10px; font-size: 18px; }
+    .list { display: grid; gap: 12px; }
+    .hint { opacity: .75; font-size: 13px; margin-top: 10px; }
+    .top-actions { margin-top: 16px; display: grid; gap: 12px; }
+    .footer { margin-top: 28px; opacity: .75; font-size: 13px; }
+    a.card {
+      display: block; padding: 14px 16px; border-radius: 14px;
+      text-decoration: none;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>喵喵服務分類入口</h1>
-  <p>這一頁正在整理中 🌙</p>
+  <main class="wrap">
+    <!-- 頁首：只做定位與一句話 -->
+    <header>
+      <h1>喵喵服務分類入口</h1>
+      <p class="sub">找到你想看的方向，再進去就好。</p>
+
+      <!-- 建議保留：回到入口頁 -->
+      <div class="top-actions">
+        <a class="card" href="/">← 回到連結入口</a>
+      </div>
+    </header>
+
+    <!-- 1) 動物溝通 -->
+    <section class="section" aria-label="動物溝通">
+      <h2>🐾 動物溝通</h2>
+      <div class="list">
+        <!-- TODO: 之後把 href 換成你的實際頁面/預約連結 -->
+        <a class="card" href="#" data-role="link">🦄 與毛孩話家常｜在世動物溝通</a>
+        <a class="card" href="#" data-role="link">✨ 傳遞光與愛｜離世動物溝通</a>
+      </div>
+      <p class="hint">（之後你要加方案介紹或常見問題，也是在這一區加，不要散到別的區。）</p>
+    </section>
+
+    <!-- 2) 塔羅占卜 -->
+    <section class="section" aria-label="塔羅占卜">
+      <h2>🔮 塔羅占卜</h2>
+      <div class="list">
+        <a class="card" href="#" data-role="link">🔮 與喵聊聊｜對話與卡牌引導</a>
+        <a class="card" href="#" data-role="link">💎 豐盛之門｜塔羅 × 星盤（半年運）</a>
+        <a class="card" href="#" data-role="link">🐧 問問塔羅｜口袋裡的喵喵教主</a>
+      </div>
+    </section>
+
+    <!-- 3) 星盤推運 -->
+    <section class="section" aria-label="星盤推運">
+      <h2>✨ 星盤推運</h2>
+      <div class="list">
+        <a class="card" href="#" data-role="link">🗒️ 事業筆記小本本｜星盤推運</a>
+        <a class="card" href="#" data-role="link">💗 自在關係小本本｜星盤推運</a>
+        <a class="card" href="#" data-role="link">📒 人生節奏備忘錄｜塔羅流年 × 星盤推運</a>
+      </div>
+    </section>
+
+    <!-- 4) 來找喵喵 -->
+    <section class="section" aria-label="來找喵喵">
+      <h2>💬 來找喵喵</h2>
+      <div class="list">
+        <a class="card" href="#" data-role="link">📱 Line 官方帳號</a>
+        <a class="card" href="#" data-role="link">📷 Instagram</a>
+        <a class="card" href="#" data-role="link">🧵 Threads</a>
+        <a class="card" href="#" data-role="link">🌍 喵喵星球 Discord</a>
+      </div>
+    </section>
+
+    <!-- 5) 有趣小玩意兒 -->
+    <section class="section" aria-label="有趣小玩意兒">
+      <h2>🎈 有趣小玩意兒</h2>
+      <div class="list">
+        <a class="card" href="/today/" data-role="link">🌿 今日指引｜給今天的你</a>
+        <a class="card" href="#" data-role="link">🎉 完成就放炮｜幫你拍拍手</a>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>© 喵喵教主</p>
+    </div>
+  </main>
 </body>
 </html>
