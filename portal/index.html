@@ -14,26 +14,151 @@
   <meta property="og:description" content="動物溝通、塔羅占卜、星盤推運與療癒小工具的分類入口。" />
   <meta property="og:image" content="https://meowmeowjiaojhu.github.io/assets/brand/meowog.png" />
   <meta property="og:url" content="https://meowmeowjiaojhu.github.io/portal/" />
-
-  <!-- Twitter Card（就算不用 X，也不會壞） -->
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon -->
+  <!-- Favicon / PWA -->
   <link rel="icon" href="/assets/brand/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
   <link rel="manifest" href="/assets/brand/site.webmanifest" />
-
-  <!-- Web App Icons -->
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/brand/favicon-96x96.png" />
-
-  <!-- Theme color（可和 site.css 主色一致） -->
   <meta name="theme-color" content="#111111" />
 
   <!-- 全站 CSS 地基 -->
   <link rel="stylesheet" href="/assets/css/site.css" />
-</head>
 
+  <!-- Portal 專用樣式：用 #portal 範圍鎖死，不影響全站 -->
+  <style>
+    /* 只控制 portal 區塊 */
+    #portal {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+
+    #portal header h1 {
+      margin: 8px 0 6px;
+      line-height: 1.2;
+    }
+
+    #portal .sub {
+      margin: 0;
+      opacity: .85;
+    }
+
+    #portal .top-actions {
+      margin-top: 16px;
+      display: grid;
+      gap: 12px;
+    }
+
+    #portal .group {
+      margin-top: 22px;
+      padding-top: 6px;
+    }
+
+    #portal .group h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: .2px;
+    }
+
+    #portal .grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) {
+      #portal .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    #portal .card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 14px 14px;
+      border-radius: 16px;
+
+      text-decoration: none;
+      color: inherit;
+
+      /* 盡量不依賴 site.css 的卡片樣式，自己站得住 */
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    #portal .card:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+      transform: translateY(-1px);
+      transition: transform .08s ease, border-color .12s ease;
+    }
+
+    #portal .icon {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      flex: 0 0 34px;
+      font-size: 18px;
+    }
+
+    #portal .text {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    #portal .name {
+      font-weight: 700;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #portal .desc {
+      opacity: .80;
+      font-size: 13px;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #portal .arrow {
+      opacity: .65;
+      font-size: 20px;
+      line-height: 1;
+      flex: 0 0 auto;
+    }
+
+    #portal .hint {
+      margin: 10px 2px 0;
+      opacity: .75;
+      font-size: 13px;
+    }
+
+    #portal .footer {
+      margin-top: 26px;
+      padding-top: 10px;
+      opacity: .75;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* 避免 site.css 可能對 a 施加奇怪的 underline/顏色 */
+    #portal a:visited { color: inherit; }
+  </style>
+</head>
 
 <body>
   <main id="portal">
@@ -43,7 +168,7 @@
 
       <div class="top-actions">
         <a class="card" href="/">
-          <span class="icon">←</span>
+          <span class="icon" aria-hidden="true">←</span>
           <span class="text">
             <span class="name">回到連結入口</span>
             <span class="desc">回首頁總入口</span>
@@ -58,7 +183,7 @@
       <h2>🐾 動物溝通</h2>
       <div class="grid">
         <a class="card" href="/plztailme/">
-          <span class="icon">🦄</span>
+          <span class="icon" aria-hidden="true">🦄</span>
           <span class="text">
             <span class="name">與毛孩話家常</span>
             <span class="desc">在世動物溝通</span>
@@ -67,7 +192,7 @@
         </a>
 
         <a class="card" href="/the-pawer-tails/">
-          <span class="icon">✨</span>
+          <span class="icon" aria-hidden="true">✨</span>
           <span class="text">
             <span class="name">傳遞光與愛</span>
             <span class="desc">離世動物溝通</span>
@@ -75,7 +200,7 @@
           <span class="arrow" aria-hidden="true">›</span>
         </a>
       </div>
-      <p class="hint">（方案介紹或常見問題，建議都放在這一區下方。）</p>
+      <p class="hint">（方案介紹或常見問題，之後都可以放在這一區下方。）</p>
     </section>
 
     <!-- 2) 塔羅占卜 -->
@@ -83,7 +208,7 @@
       <h2>🔮 塔羅占卜</h2>
       <div class="grid">
         <a class="card" href="/chat-with-meow/">
-          <span class="icon">🔮</span>
+          <span class="icon" aria-hidden="true">🔮</span>
           <span class="text">
             <span class="name">與喵聊聊</span>
             <span class="desc">對話與卡牌引導</span>
@@ -92,7 +217,7 @@
         </a>
 
         <a class="card" href="/abundance-gate/">
-          <span class="icon">💎</span>
+          <span class="icon" aria-hidden="true">💎</span>
           <span class="text">
             <span class="name">豐盛之門</span>
             <span class="desc">塔羅 × 星盤（半年運）</span>
@@ -101,7 +226,7 @@
         </a>
 
         <a class="card" href="/pocket-tarot/">
-          <span class="icon">🐧</span>
+          <span class="icon" aria-hidden="true">🐧</span>
           <span class="text">
             <span class="name">問問塔羅</span>
             <span class="desc">口袋裡的喵喵教主</span>
@@ -116,7 +241,7 @@
       <h2>✨ 星盤推運</h2>
       <div class="grid">
         <a class="card" href="/career-notebook/">
-          <span class="icon">🗒️</span>
+          <span class="icon" aria-hidden="true">🗒️</span>
           <span class="text">
             <span class="name">事業筆記小本本</span>
             <span class="desc">星盤推運</span>
@@ -125,7 +250,7 @@
         </a>
 
         <a class="card" href="/relationship-notebook/">
-          <span class="icon">💗</span>
+          <span class="icon" aria-hidden="true">💗</span>
           <span class="text">
             <span class="name">自在關係小本本</span>
             <span class="desc">星盤推運</span>
@@ -134,7 +259,7 @@
         </a>
 
         <a class="card" href="/rhythm-memo/">
-          <span class="icon">📒</span>
+          <span class="icon" aria-hidden="true">📒</span>
           <span class="text">
             <span class="name">人生節奏備忘錄</span>
             <span class="desc">塔羅流年 × 星盤推運</span>
@@ -148,8 +273,8 @@
     <section class="group" aria-label="來找喵喵">
       <h2>💬 來找喵喵</h2>
       <div class="grid">
-        <a class="card" href="https://line.me/">
-          <span class="icon">📱</span>
+        <a class="card" href="https://line.me/" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">📱</span>
           <span class="text">
             <span class="name">Line 官方帳號</span>
             <span class="desc">預約與訊息</span>
@@ -157,8 +282,8 @@
           <span class="arrow" aria-hidden="true">›</span>
         </a>
 
-        <a class="card" href="https://www.instagram.com/">
-          <span class="icon">📷</span>
+        <a class="card" href="https://www.instagram.com/" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">📷</span>
           <span class="text">
             <span class="name">Instagram</span>
             <span class="desc">日常與公告</span>
@@ -166,8 +291,8 @@
           <span class="arrow" aria-hidden="true">›</span>
         </a>
 
-        <a class="card" href="https://www.threads.net/">
-          <span class="icon">🧵</span>
+        <a class="card" href="https://www.threads.net/" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">🧵</span>
           <span class="text">
             <span class="name">Threads</span>
             <span class="desc">動物溝通內容</span>
@@ -176,7 +301,7 @@
         </a>
 
         <a class="card" href="/discord/">
-          <span class="icon">🌍</span>
+          <span class="icon" aria-hidden="true">🌍</span>
           <span class="text">
             <span class="name">喵喵星球 Discord</span>
             <span class="desc">文章與宇宙基地</span>
@@ -191,7 +316,7 @@
       <h2>🎈 有趣小玩意兒</h2>
       <div class="grid">
         <a class="card" href="/today/">
-          <span class="icon">🌿</span>
+          <span class="icon" aria-hidden="true">🌿</span>
           <span class="text">
             <span class="name">今日指引</span>
             <span class="desc">給今天的你</span>
@@ -199,8 +324,8 @@
           <span class="arrow" aria-hidden="true">›</span>
         </a>
 
-        <a class="card" href="/celebration/">
-          <span class="icon">🎉</span>
+        <a class="card" href="/celebrate/">
+          <span class="icon" aria-hidden="true">🎉</span>
           <span class="text">
             <span class="name">完成就放炮</span>
             <span class="desc">幫你拍拍手</span>
