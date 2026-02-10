@@ -3,143 +3,37 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>喵喵教主｜服務分類入口</title>
+  <meta name="description" content="動物溝通、塔羅占卜、星盤推運與療癒小工具的分類入口。" />
 
-  <!-- 全站地基：只吃 site.css -->
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="喵喵教主" />
+  <meta property="og:title" content="喵喵教主｜服務分類入口" />
+  <meta property="og:description" content="動物溝通、塔羅占卜、星盤推運與療癒小工具的分類入口。" />
+  <meta property="og:image" content="https://meowmeowjiaojhu.github.io/assets/brand/meowog.png" />
+  <meta property="og:url" content="https://meowmeowjiaojhu.github.io/portal/" />
+
+  <!-- Twitter Card（就算不用 X，也不會壞） -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/brand/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/brand/site.webmanifest" />
+
+  <!-- Web App Icons -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/brand/favicon-96x96.png" />
+
+  <!-- Theme color（可和 site.css 主色一致） -->
+  <meta name="theme-color" content="#111111" />
+
+  <!-- 全站 CSS 地基 -->
   <link rel="stylesheet" href="/assets/css/site.css" />
-
-  <!-- 本頁專用：只影響 #portal（不污染其他頁） -->
-  <style>
-    /* ===== Page frame ===== */
-    #portal{
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 24px 16px 56px;
-    }
-    #portal .sub{ opacity: .85; margin-top: 8px; }
-    #portal .group{ margin-top: 26px; }
-    #portal .group h2{
-      margin: 0 0 12px;
-      font-size: 18px;
-      letter-spacing: .2px;
-    }
-    #portal .hint{
-      opacity: .75;
-      font-size: 13px;
-      margin: 10px 2px 0;
-    }
-    #portal .footer{
-      margin-top: 34px;
-      opacity: .75;
-      font-size: 13px;
-    }
-
-    /* ===== Button cards (入口按鈕) ===== */
-    #portal .grid{
-      display: grid;
-      gap: 12px;
-    }
-
-    #portal .card{
-      display: flex;
-      align-items: center;
-      gap: 12px;
-
-      width: 100%;
-      padding: 14px 14px;
-      border-radius: 14px;
-
-      text-decoration: none;
-      color: inherit;
-
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 10px 22px rgba(0,0,0,.18);
-
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-      touch-action: manipulation;
-
-      transition: transform .12s ease, background-color .12s ease, border-color .12s ease, box-shadow .12s ease;
-    }
-
-    #portal .icon{
-      flex: 0 0 auto;
-      font-size: 18px;
-      line-height: 1;
-      opacity: .95;
-    }
-
-    #portal .text{
-      display: grid;
-      gap: 2px;
-      min-width: 0;
-    }
-
-    #portal .name{
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: .2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    #portal .desc{
-      font-size: 13px;
-      opacity: .78;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    #portal .arrow{
-      margin-left: auto;
-      opacity: .55;
-      font-size: 22px;
-      line-height: 1;
-    }
-
-    /* Desktop hover */
-    @media (hover: hover) and (pointer: fine){
-      #portal .card:hover{
-        background: rgba(255,255,255,.10);
-        border-color: rgba(255,255,255,.22);
-        transform: translateY(-1px);
-        box-shadow: 0 14px 28px rgba(0,0,0,.22);
-      }
-    }
-
-    /* Touch active */
-    #portal .card:active{
-      background: rgba(255,255,255,.12);
-      transform: translateY(0);
-    }
-
-    /* Keyboard accessibility */
-    #portal .card:focus-visible{
-      outline: 2px solid rgba(255,255,255,.55);
-      outline-offset: 3px;
-    }
-
-    /* ===== Top actions ===== */
-    #portal .top-actions{
-      margin-top: 16px;
-      display: grid;
-      gap: 12px;
-    }
-    #portal .top-actions .card{
-      padding: 12px 14px;
-    }
-
-    /* ===== Mobile tweaks ===== */
-    @media (max-width: 520px){
-      #portal .group h2{ font-size: 17px; }
-      #portal .card{ padding: 14px 12px; border-radius: 16px; }
-      #portal .desc{ font-size: 12.5px; }
-    }
-  </style>
 </head>
+
 
 <body>
   <main id="portal">
